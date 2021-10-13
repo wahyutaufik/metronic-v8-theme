@@ -1,0 +1,1 @@
+<input type="text" class="inputmask {{ $class }}" name="{{  $self['name'] }}" id="inputmask_{{ $self['name'] }}" value="{{ $value }}" data-inputmask="'mask': '{{ $mask }}'" mask="{{ $mask }}" placeholder="{{ $mask }}" />
