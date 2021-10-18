@@ -189,7 +189,7 @@ use ROH\Util\Inflector;
 									<!--end::Menu item-->
 									<!--begin::Menu item-->
 									<div class="menu-item px-3">
-										<a href="#" class="menu-link px-3" data-kt-roles-table-filter="delete_row">Delete</a>
+										<a href="{{ f('controller.url', '/'.$entry['$id'].'/remove/'.$user['$id']) }}" class="menu-link px-3" data-kt-roles-table-filter="delete_row">Remove</a>
 									</div>
 									<!--end::Menu item-->
 								</div>

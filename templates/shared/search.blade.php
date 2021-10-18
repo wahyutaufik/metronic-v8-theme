@@ -212,6 +212,13 @@ var KTDatatablesServerSide = function () {
         },
     ];
 
+    const params = new URLSearchParams(window.location.search);
+    var url = `{{f('controller.url', '.json')}}`;
+    let paramObj = {};
+    
+    for (var value of params.keys()) {
+        paramObj[value] = params.get(value);
+    }
     // Private functions
     var initDatatable = function () {
         dt = $("#kt_datatable_example_1").DataTable({
@@ -225,10 +232,10 @@ var KTDatatablesServerSide = function () {
                 className: 'row-selected'
             },
             ajax: {
-                url:   `{{f('controller.url', '.json')}}`,
-                data: {
-                    'format': 'datatable'
-                }
+                url: url,
+                data: Object.assign(paramObj, {
+                    format: 'datatable'
+                })
             },
             columns: columns,
             columnDefs: columnDefs
